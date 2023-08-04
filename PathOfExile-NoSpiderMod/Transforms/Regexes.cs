@@ -15,31 +15,31 @@ public partial class Regexes
 
     const RegexOptions regexOptions = RegexOptions.IgnoreCase;
 
-    [GeneratedRegex(@"^Metadata/NPC/Act1/.*Doorman", regexOptions)]
+    [GeneratedRegex(@"^metadata/npc/act1/.*doorman", regexOptions)]
     public static partial Regex TestGroupRegex();
 
-    [GeneratedRegex(@"^Metadata/Monsters/.*crab", regexOptions)]
+    [GeneratedRegex(@"^metadata/monsters/.*crab", regexOptions)]
     public static partial Regex CrabGroupRegex();
 
-    [GeneratedRegex(@"^Metadata/Monsters/.*NessaCrab", regexOptions)]
+    [GeneratedRegex(@"^metadata/monsters/.*nessacrab", regexOptions)]
     public static partial Regex CrabGroupEx1Regex();
 
-    [GeneratedRegex(@"^Metadata/Monsters/.*ShieldCrab", regexOptions)]
+    [GeneratedRegex(@"^metadata/monsters/.*shieldcrab", regexOptions)]
     public static partial Regex CrabGroupEx2Regex();
 
-    [GeneratedRegex(@"^Metadata/.*Weta", regexOptions)]
+    [GeneratedRegex(@"^metadata/.*weta", regexOptions)]
     public static partial Regex WetaGroupRegex();
 
-    [GeneratedRegex(@"^Metadata/.*Spider", regexOptions)]
+    [GeneratedRegex(@"^metadata/.*spider", regexOptions)]
     public static partial Regex MainGroupRegex();
 
-    [GeneratedRegex(@"^Metadata/Monsters/Arakaali/", regexOptions)]
+    [GeneratedRegex(@"^metadata/monsters/arakaali/", regexOptions)]
     public static partial Regex MainGroupArakaaliRegex();
 
-    [GeneratedRegex(@"^Metadata/.*RazorLeg", regexOptions)]
+    [GeneratedRegex(@"^metadata/.*razorleg", regexOptions)]
     public static partial Regex MainGroupRazorLegRegex();
 
-    [GeneratedRegex(@"^Metadata/Monsters/Arakaali/Turrets/ArakaaliTurret", regexOptions)]
+    [GeneratedRegex(@"^metadata/monsters/arakaali/turrets/arakaaliturret", regexOptions)]
     public static partial Regex MainGroupExRegex();
 
     [GeneratedRegex("(\t|^)skin = \"(?'SkinPath'.*?)\"", regexOptions)]

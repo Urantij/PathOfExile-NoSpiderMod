@@ -51,8 +51,8 @@ class Program
 
     static readonly Dictionary<string, FileData> files = new(StringComparer.OrdinalIgnoreCase);
 
-    const string barrelPath = "Metadata/Chests/Barrels/Barrel1.ao";
-    const string cratePath = "Metadata/Chests/Crates/Crate1.ao";
+    const string barrelPath = "metadata/chests/barrels/barrel1.ao";
+    const string cratePath = "metadata/chests/crates/crate1.ao";
 
     static bool writeTestFiles = false;
 
@@ -93,7 +93,7 @@ class Program
 
         using var ggpk = new BundledGGPK(filePath, true);
 
-        var meta = (DirectoryNode)ggpk.Index.FindNode("Metadata")!;
+        var meta = (DirectoryNode)ggpk.Index.FindNode("metadata")!;
 
         var b1 = (FileNode)ggpk.Index.FindNode(barrelPath)!;
         var c1 = (FileNode)ggpk.Index.FindNode(cratePath)!;
@@ -101,11 +101,11 @@ class Program
         var dirs = meta.Children.OfType<DirectoryNode>().Select(d => d.Name).ToArray();
         System.Console.WriteLine(string.Join(", ", dirs));
 
-        var monsters = (DirectoryNode)ggpk.Index.FindNode("Monsters", meta)!;
-        var critters = (DirectoryNode)ggpk.Index.FindNode("Critters", meta)!;
-        var pet = (DirectoryNode)ggpk.Index.FindNode("Pet", meta)!;
-        var npc = (DirectoryNode)ggpk.Index.FindNode("NPC", meta)!;
-        var effects = (DirectoryNode)ggpk.Index.FindNode("Effects", meta)!;
+        var monsters = (DirectoryNode)ggpk.Index.FindNode("monsters", meta)!;
+        var critters = (DirectoryNode)ggpk.Index.FindNode("critters", meta)!;
+        var pet = (DirectoryNode)ggpk.Index.FindNode("pet", meta)!;
+        var npc = (DirectoryNode)ggpk.Index.FindNode("npc", meta)!;
+        var effects = (DirectoryNode)ggpk.Index.FindNode("effects", meta)!;
 
         DoDir(monsters, TransformFile);
         DoDir(critters, TransformFile);
@@ -272,7 +272,7 @@ class Program
 
         if (aoc)
         {
-            bool arakaali = fileNode.Record.Path.StartsWith("Metadata/Monsters/Arakaali/");
+            bool arakaali = fileNode.Record.Path.StartsWith("metadata/monsters/arakaali/");
 
             result = AocProcess.Do(source, arakaali);
         }

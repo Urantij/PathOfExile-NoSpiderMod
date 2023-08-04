@@ -43,8 +43,8 @@ public static class OtcProcess
         if (!lifeChange || source.Contains("extends \"nothing\""))
             return source;
 
-        const string barrelPath = "Metadata/Chests/Barrels/Barrel1.ao";
-        const string cratePath = "Metadata/Chests/Crates/Crate1.ao";
+        const string barrelPath = "metadata/chests/barrels/barrel1.ao";
+        const string cratePath = "metadata/chests/crates/crate1.ao";
 
         string ao = barrel ? barrelPath : cratePath;
         string aoAlt = barrel ? cratePath : barrelPath;
