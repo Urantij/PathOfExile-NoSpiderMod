@@ -93,19 +93,19 @@ class Program
 
         using var ggpk = new BundledGGPK(filePath, true);
 
-        var meta = (DirectoryNode)ggpk.Index.FindNode("metadata")!;
+        var meta = (DirectoryNode)ggpk.Index.FindNodeNoCase("metadata")!;
 
-        var b1 = (FileNode)ggpk.Index.FindNode(barrelPath)!;
-        var c1 = (FileNode)ggpk.Index.FindNode(cratePath)!;
+        var b1 = (FileNode)ggpk.Index.FindNodeNoCase(barrelPath)!;
+        var c1 = (FileNode)ggpk.Index.FindNodeNoCase(cratePath)!;
 
         var dirs = meta.Children.OfType<DirectoryNode>().Select(d => d.Name).ToArray();
         System.Console.WriteLine(string.Join(", ", dirs));
 
-        var monsters = (DirectoryNode)ggpk.Index.FindNode("monsters", meta)!;
-        var critters = (DirectoryNode)ggpk.Index.FindNode("critters", meta)!;
-        var pet = (DirectoryNode)ggpk.Index.FindNode("pet", meta)!;
-        var npc = (DirectoryNode)ggpk.Index.FindNode("npc", meta)!;
-        var effects = (DirectoryNode)ggpk.Index.FindNode("effects", meta)!;
+        var monsters = (DirectoryNode)ggpk.Index.FindNodeNoCase("monsters", meta)!;
+        var critters = (DirectoryNode)ggpk.Index.FindNodeNoCase("critters", meta)!;
+        var pet = (DirectoryNode)ggpk.Index.FindNodeNoCase("pet", meta)!;
+        var npc = (DirectoryNode)ggpk.Index.FindNodeNoCase("npc", meta)!;
+        var effects = (DirectoryNode)ggpk.Index.FindNodeNoCase("effects", meta)!;
 
         DoDir(monsters, TransformFile);
         DoDir(critters, TransformFile);
@@ -184,7 +184,7 @@ class Program
         {
             string otcPath = Path.ChangeExtension(fileNode.Record.Path, "otc");
 
-            ITreeNode? otcNode = fileNode.Record.BundleRecord.Index.FindNode(otcPath);
+            ITreeNode? otcNode = fileNode.Record.BundleRecord.Index.FindNodeNoCase(otcPath);
 
             if (otcNode is FileNode fileOtc)
             {
