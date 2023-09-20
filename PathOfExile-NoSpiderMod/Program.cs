@@ -35,7 +35,8 @@ class Program
     {
         Regexes.MainGroupRegex(),
         Regexes.MainGroupArakaaliRegex(),
-        Regexes.MainGroupRazorLegRegex()
+        Regexes.MainGroupRazorLegRegex(),
+        Regexes.MainGroupArachnoRegex()
     }, new Regex[]
     {
         Regexes.MainGroupExRegex()

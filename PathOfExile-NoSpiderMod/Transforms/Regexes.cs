@@ -39,6 +39,9 @@ public partial class Regexes
     [GeneratedRegex(@"^metadata/.*razorleg", regexOptions)]
     public static partial Regex MainGroupRazorLegRegex();
 
+    [GeneratedRegex(@"^metadata/.*arachno", regexOptions)]
+    public static partial Regex MainGroupArachnoRegex();
+
     [GeneratedRegex(@"^metadata/monsters/arakaali/turrets/arakaaliturret", regexOptions)]
     public static partial Regex MainGroupExRegex();
 
